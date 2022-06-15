@@ -4,7 +4,7 @@ import Header from './Component/Header';
 import Home from './Component/Home.jsx'
 import Cart from './Component/Cart.jsx'
 
-function App() {
+function App() {  
   return (
     <BrowserRouter>
      <Header></Header>  

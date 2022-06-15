@@ -4,20 +4,18 @@ import jsonData from './data'
 
 
 
-function    Home() {
+function    Home( {cart, setCart}) {
   const [product, setProduct]=useState([])
-  const [cart, setCart]= useState([])
+  // const [cart, setCart]= useState([])
 
 //   useEffect(()=>{fetch('https://fakestoreapi.com/products?limit=20')
 // .then(res=>res.json())
 // .then(json=>setProduct(json))}, [])
 
-
 useEffect(()=>{
 setProduct(jsonData)
 },[])
 // console.log(product);
-console.log(cart);  
 
 
   return (

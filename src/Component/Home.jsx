@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import SingleCompo from './SingleCompo';
 import jsonData from './data'
 
@@ -20,7 +20,7 @@ setProduct(jsonData)
 
   return (
     <div className='home'>
-      {product.map((prod)=>(<SingleCompo key={prod.id} prod={prod} cart={cart} setCart={setCart}/>))}
+      {product.map((prod)=>(<SingleCompo key={prod.id} prod={prod} />))}
     </div>
   )
 }

@@ -1,17 +1,27 @@
-import React from "react";
+import React, {useState, useEffect, useContext } from "react";
+import { cartContext } from "../Context";
 import SingleCompo from "./SingleCompo";
 
-function Cart({cart, setCart}) {
-  console.log(cart.length)
+function Cart() {
+/* here below, we are destructuring values of context provider */
+  const{cartState}= useContext(cartContext); 
+
+  const[CarttotalPrice, setTotalPrice]= useState()  
+  
+  // Below code is to get the total amount of the cart
+  useEffect(()=>{
+  setTotalPrice( cartState.reduce((acc, curr)=>acc + curr.price, 0))
+  },[cartState])
+ 
   return (
     <div className="cart">
       <h1>My Cart</h1>
-      <p>Total :{cart.length}</p>
+      <p>Total :{CarttotalPrice}</p>
       <div className="classProduct">
      
       </div>
       <div>
-      {cart.map((prod)=>(<SingleCompo prod={prod} key={prod.id} cart={cart}  setCart={setCart}/>))}
+      {cartState.map((prod)=>(<SingleCompo prod={prod} key={prod.id} />))}
       </div>  
     </div>
   );
